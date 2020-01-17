@@ -22,37 +22,51 @@ double height;
 
 int main()
 {
-    menuitems();
-    switch(selected_option)
+    char cont;
+    do
     {
-        case 1:
-            cout << "What's the radius of the circle? ";
-            cin >> radius;
-            areaCircle(radius);
-            break;
-        case 2:
-            cout << "What's the length of the square? ";
-            cin >> length;
-            areaSquare(length);
-            break;
-        case 3:
-            cout << "What's the length of the rectangle? ";
-            cin >> len_rect;
-            cout << "What's the width of the rectangle? ";
-            cin >> wid_rect;
-            areaRect(len_rect,wid_rect);
-            break;
-        case 4:
-            cout << "What's the length of the triangle's base? ";
-            cin >> base;
-            cout << "What's the length of the triangle's height? ";
-            cin >> height;
-            areaTriangle(base, height);
-            break;
-        default:
-            cout << "Incorrect value added. Try again. Bye." << endl;
-            break;
+        menuitems();
+        system("clear");
+        switch(selected_option)
+        {
+            case 1:
+                cout << "What's the radius of the circle? ";
+                cin >> radius;
+                areaCircle(radius);
+                break;
+            case 2:
+                cout << "What's the length of the square? ";
+                cin >> length;
+                areaSquare(length);
+                break;
+            case 3:
+                cout << "What's the length of the rectangle? ";
+                cin >> len_rect;
+                cout << "What's the width of the rectangle? ";
+                cin >> wid_rect;
+                areaRect(len_rect,wid_rect);
+                break;
+            case 4:
+                cout << "What's the length of the triangle's base? ";
+                cin >> base;
+                cout << "What's the length of the triangle's height? ";
+                cin >> height;
+                areaTriangle(base, height);
+                break;
+            default:
+                cout << "Incorrect value added. Try again. Bye." << endl;
+                break;
+        }
+        do
+        {
+            cout << "Continue? (Y/N): " << endl;
+            cin >> cont;
+        }
+        while (cont != 'y' && cont != 'Y' && cont != 'N' && cont != 'n');
     }
+    
+    while (cont == 'y' || cont == 'Y');
+
     return 0;
 }
 
